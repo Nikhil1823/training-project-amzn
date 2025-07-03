@@ -1,0 +1,206 @@
+have some flickering in delivery container
+
+
+always keep that default styles in mind
+
+
+going to start nav2 but there is some minor adjustment need to do in nav-1
+
+in nav-2 there is some minor padding mistake or so i think thats why that nav-2 elemnt kinda blinks and in that nav2 i dont used extra li elemnt like they do 
+only to just keep things working for now
+
+
+nav-3 is almost complete and there is nothing to worry there i guess
+
+
+html{
+    
+    <main class="contents">
+        <aside class="filters-wrapper">
+            <div class="filters">
+                <div class="delivery">
+                    <span class="heading">
+                        Delivery Day
+                    </span>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p>Get it by Tomorrow</p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p>Get it in 2 Days</p>
+                    </div>
+                </div>
+                <div class="categories"></div>
+                <div class="brands">
+                    <p class="clear"></p>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <div class="input-div">
+                        <input type="checkbox">
+                        <p></p>
+                    </div>
+                    <p class="see-more"></p>
+                </div>
+                <div class="customer-review">
+                    <div class="five-star">
+                        <button></button>
+                    </div>
+                    <div class="four-star">
+                        <button></button>
+                    </div>
+                    <div class="four-star">
+                        <button></button>
+                    </div>
+                    <div class="three-star">
+                        <button></button>
+                    </div>
+                    <div class="two-star">
+                        <button></button>
+                    </div>
+                    <div class="one-star">
+                        <button></button>
+                    </div>
+                </div>
+                <div class="condition">
+                    <p></p>
+                    <p></p>
+                </div>
+
+                <div class="price">
+                    <p id="value"></p>
+                </div>
+            </div>
+        </aside>
+        <aside class="result-section"></aside>
+    </main>
+
+}
+
+
+styles{
+    
+div.result h2,
+div.result p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333;
+    margin: 8px 0;
+}
+
+
+div.left-result {
+    width: calc(.625 *(100vw - 28px));
+    min-width: 622.5px;
+    max-width: 1122.5px;
+    /* height: 100%; */
+    margin: 2px 0;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+}
+
+div.right-result {
+    padding: 0 4px;
+    display: flex;
+    justify-content: flex-end;
+    width: calc(.375 * (100vw - 28px));
+    /* width: 100%; */
+}
+
+div.right-result p button {
+    /* color: rgb(15, 17, 17);
+    line-height: 22px;
+    font-size: 11px;
+    white-space: nowrap; */
+    border: 0;
+    outline: 0;
+    border-radius: 8px;
+    background-color: #f0f2f2;
+    height: 24px;
+    padding: 0 8px 0 8px;
+    /* text-align: right; */
+    border-color: #d5d9d9;
+
+}
+
+div.right-result button a {
+    color: rgb(15, 17, 17);
+    line-height: 22px;
+    font-size: 11px;
+    white-space: nowrap;
+    padding-right: 4px;
+}
+
+div.right-result button a:first-of-type {
+    padding: 0 0 2px 2px;
+    margin-right: 5px;
+
+}
+
+div.right-result button i.down-arrow {
+    background-image: url(assets/McBZv0ZvnbehkIx.png);
+    background-position: -7px -102px;
+    width: 10px;
+    background-size: 400px 900px;
+    height: 8px;
+    display: inline-block;
+}
+
+.contents {
+    margin: 0 auto;
+    max-width: 1800px;
+    padding-top: 14px;
+    background-color: #fff;
+    min-width: 996px;
+    width: calc(100vw - 24px);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside.filters-wrapper {
+    width: calc(.25 * (100vw - 28px));
+    min-width: 249px;
+    max-width: 449px;
+    background-color: red;
+}
+
+aside div.filters {
+    padding: 0 4px;
+    height: 100%;
+
+    word-break: break-word;
+    padding-right: 12px;
+    line-height: 16px;
+}
+
+div.delivery {
+    display: flex;
+    flex-direction: column;
+
+}
+}
