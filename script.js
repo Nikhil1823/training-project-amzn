@@ -61,27 +61,38 @@ const lastPortion = `  <div class="pagination">
                 </div>`;
 
 window.addEventListener("load", async () => {
-  const Products = await populateData();
-  resultDiv.innerHTML = resultHeader + Products + lastPortion;
+  const data = await fetchData(brand);
+  domInjector(populateData(data));
 });
 
 // to fetch data
-const fetchData = async (items = [], starCount = 3) => {
+const fetchData = async (items = []) => {
   const response = await fetch("data.json");
   let res = await response.json();
 
   if (items.length > 0) {
     res = items.map((val) => {
-      return res[val].filter(
-        (eachItem) => eachItem.rating.starCount >= starCount
-      );
-      // return res[val];
+      return res[val];
     });
   } else {
     res = Object.values(res);
   }
 
   return res;
+};
+
+const priceFilter = async (minPrice = 6000, maxPrice = 10000) => {
+  const data = await fetchData(brand);
+  const resultItem = data.map((product) => {
+    return product.filter((eachProduct) => {
+      return (
+        eachProduct.price.offerPrice >= minPrice &&
+        eachProduct.price.offerPrice <= maxPrice
+      );
+    });
+  });
+
+  domInjector(populateData(resultItem));
 };
 
 // dynamic content injection
@@ -95,15 +106,13 @@ brandButton.forEach((button) => {
     } else {
       brand = brand.filter((b) => b != button.value);
     }
-    const products = await populateData(brand);
-    resultDiv.innerHTML = `${resultHeader}${products}${lastPortion}`;
+
+    const data = await fetchData(brand);
+    domInjector(populateData(data));
   });
 });
 
-const populateData = async (brand) => {
-  const products = await fetchData(brand);
-  // console.log(products);
-
+const populateData = (products) => {
   return Object.entries(products)
     .map(([key, val]) => {
       return val
@@ -233,9 +242,10 @@ const unwantedThings = `  <div class="more-choice">
 
 const icons = document.querySelectorAll("ul.review li i");
 icons.forEach((icon) => {
-  icon.addEventListener("click", function (event) {
+  icon.addEventListener("click", async function (event) {
     const reqId = event.target.getAttribute("id");
     console.log("going to hide", reqId);
+    await starFilter(Number(reqId));
     const stars = document.querySelectorAll("ul.review li");
 
     stars.forEach((star) => {
@@ -248,8 +258,18 @@ icons.forEach((icon) => {
   });
 });
 
-const priceFilter = async () => {};
+const starFilter = async (starCount = 4.5) => {
+  const data = await fetchData(brand);
+  const starData = data.map((eachBrand) => {
+    return eachBrand.filter((eachProduct) => {
+      return eachProduct.rating.starCount >= starCount;
+    });
+  });
+  console.log(starData);
+  const products = populateData(starData);
+  domInjector(products);
+};
 
-const starFilter = async () => {
-  const data = await fetchData(4);
+const domInjector = (products) => {
+  resultDiv.innerHTML = resultHeader + products + lastPortion;
 };

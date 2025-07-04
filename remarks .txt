@@ -10,7 +10,14 @@ in nav-2 there is some minor padding mistake or so i think thats why that nav-2 
 only to just keep things working for now
 
 
-nav-3 is almost complete and there is nothing to worry there i guess
+nav-3 is almost complete and there is nothing to worry there i guess -its finished
+
+
+
+
+
+
+footer section -1 is complete  but need to make it pixel perfect
 
 
 html{
