@@ -15,7 +15,7 @@ const resultHeader = `<div class="result-header">
                         <h2>Results</h2>
                         <p>Check each product page for other buying options.</p>
                     </div>`;
-
+  
 const lastPortion = `  <div class="pagination">
                         <div class="pagination-strip">
                             <ul class="page-bar">
