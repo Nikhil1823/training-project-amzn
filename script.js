@@ -18,6 +18,8 @@ const resultHeader = `<div class="result-header">
 
 const lastPortion = `  <div class="pagination">
                         <div class="pagination-strip">
+                          <span class="s-page-span">
+                        
                             <ul class="page-bar">
                                 <li>
                                     <span class="back">
@@ -31,11 +33,12 @@ const lastPortion = `  <div class="pagination">
                                     </span>
                                 </li>
 
-                                <li class="selected-page"><span><span>1</span></span></li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>...</li> 
-                                <li>32</li>
+                                <li class="selected-page"><span class="outer"><span class="inner">1</span></span></li>
+                                <li><span>2</span></li>
+                                <li><span>3</span></li>
+                                <li><span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2" aria-hidden="true"><path d="M9 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1zM5 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1zM1 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1z"></path>...</svg></span></li>
+
+                                <li><span>32</span></li>
                                 <li>
                                     <span class="forward">
                                         Next
@@ -48,16 +51,17 @@ const lastPortion = `  <div class="pagination">
                                     </span>
                                 </li>
                             </ul>
+                          </span>
                         </div>
                     </div>
 
                     <div class="help-section">
                         <div class="help-container">
-                            <h2>Need Help?</h2>
+                            <h2>Need help?</h2>
                             <a href=""><span>Visit the help section</span> or <span>contact us </span></a>
                         </div>
                     </div>
-                   
+
                 </div>`;
 
 window.addEventListener("load", async () => {
@@ -81,17 +85,12 @@ const fetchData = async (items = []) => {
   return res;
 };
 
-const priceFilter = async (minPrice = 6000, maxPrice = 14500) => {
-  console.log("min values", minPrice);
-  console.log("values", maxPrice);
-  console.log("brands", brand);
-
+const priceFilter = async (minPrice, maxPrice) => {
   const data = await fetchData(brand);
 
   const resultItem = data.map((product) => {
     return product.filter((eachProduct) => {
       const price = eachProduct.price.offerPrice;
-      console.log("Checking:", eachProduct.price.offerPrice);
       return price >= minPrice && price <= maxPrice;
     });
   });
@@ -106,7 +105,7 @@ brandButton.forEach((button) => {
   button.addEventListener("click", async () => {
     const brandTag = button.nextElementSibling;
     brandTag.classList.toggle("selected-brand");
-    console.log(button.value);
+
     if (button.checked) {
       brand.unshift(button.value);
     } else {
@@ -141,7 +140,7 @@ const populateData = (products) => {
                                     <h2>${data.title}
                                     </h2>
 
-                                </div> 
+                                </div>
                                 <div class="review-block">
                                     <div class="star-count">
                                         <div class="product-star">
@@ -157,8 +156,7 @@ const populateData = (products) => {
                                        ${data.rating.recentPurchase}
                                     </div>
                                 </div>
-                               
-                                
+
                                 <div class="amount-block">
                                     <div class="amount-offer">
                                         <span class="symbol">₹</span>
@@ -173,7 +171,7 @@ const populateData = (products) => {
                                       ? `<div class="offers">${data.offers.offer1}</div>`
                                       : ""
                                     ).trim()}
-                                    
+
                                 </div>
 
                                 <div class="delivery-div">
@@ -184,15 +182,13 @@ const populateData = (products) => {
                                     </div>`
                                   : ""
                                 ).trim()}
-                                    
+
                                     <div class="delivery-date">
                                         <p>FREE delivery <span>${
                                           data.delivery
                                             .split("FREE delivery")[1]
                                             .split("Or")[0]
                                         }</span></p>
-
-
 
                                       ${
                                         data.delivery.split(
@@ -210,7 +206,7 @@ const populateData = (products) => {
                                           </p>`
                                           : ""
                                       }
-                                        
+
                                     </div>
                                     ${(data.serviceAvailable.service1
                                       ? `<div class="services">
@@ -219,16 +215,13 @@ const populateData = (products) => {
                                     </div>`
                                       : ""
                                     ).trim()}
-                                    
+
                                 </div>
-
-
 
                                 <div class="add-to-cart">
                                     <a href="" class="cart-button"><button>Add to cart</button></a>
                                 </div>
 
-                              
                             </div>
 
                         </div>
@@ -250,7 +243,7 @@ const icons = document.querySelectorAll("ul.review li i");
 icons.forEach((icon) => {
   icon.addEventListener("click", async function (event) {
     const reqId = event.target.getAttribute("id");
-    console.log("going to hide", reqId);
+
     await starFilter(Number(reqId));
     const stars = document.querySelectorAll("ul.review li");
 
@@ -271,7 +264,6 @@ const starFilter = async (starCount = 4.5) => {
       return eachProduct.rating.starCount >= starCount;
     });
   });
-  console.log(starData);
   const products = populateData(starData);
   domInjector(products);
 };
@@ -284,19 +276,21 @@ const sliderOne = document.getElementById("slider-1");
 const minLabel = document.getElementById("lower-limit");
 const sliderTwo = document.getElementById("slider-2");
 const maxLabel = document.getElementById("upper-limit");
-
-const helperFunction = (slider, label, suffix = "") => {
+let minVal = 195;
+let maxVal = 145000;
+const helperFunction = (slider, label, min, suffix = "") => {
   slider.addEventListener("input", (e) => {
     const value = e.target.value;
 
     label.textContent = `₹${Number(value).toLocaleString()}${suffix}`;
-  });
-
-  slider.addEventListener("change", async function (e) {
-    const value = e.target.value;
-    await priceFilter();
+    min ? (minVal = Number(value)) : (maxVal = Number(value));
   });
 };
 
-helperFunction(sliderOne, minLabel);
-helperFunction(sliderTwo, maxLabel, "+");
+helperFunction(sliderOne, minLabel, true);
+helperFunction(sliderTwo, maxLabel, false, "+");
+
+const goButton = document.getElementById("go-button");
+goButton.addEventListener("click", async () => {
+  await priceFilter(minVal, maxVal);
+});
