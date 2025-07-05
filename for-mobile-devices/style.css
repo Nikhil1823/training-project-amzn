@@ -317,3 +317,17 @@ span.place {
     width: 85%;
 
 }
+
+main#contents {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 0;
+    grid-auto-flow: dense;
+}
+
+div.sticky-header {
+    /* position: sticky; */
+    grid-column: span 16;
+    
+}

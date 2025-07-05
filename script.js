@@ -16,42 +16,44 @@ const resultHeader = `<div class="result-header">
                         <p>Check each product page for other buying options.</p>
                     </div>`;
 
-const lastPortion = `  <div class="pagination">
+const lastPortion = `  
+                    <div class="pagination">
                         <div class="pagination-strip">
-                          <span class="s-page-span">
-                        
-                            <ul class="page-bar">
-                                <li>
-                                    <span class="back">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                            focusable="false" aria-hidden="true">
-                                            <path
-                                                d="M5.874.35a1.28 1.28 0 011.761 0 1.165 1.165 0 010 1.695L3.522 6l4.113 3.955a1.165 1.165 0 010 1.694 1.28 1.28 0 01-1.76 0L0 6 5.874.35z">
-                                            </path>
-                                        </svg>
-                                        Previous
-                                    </span>
-                                </li>
+                            <span class="testing-1">
+                                    <ul class="page-bar">
+                                        <div class="back">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12"
+                                                viewBox="0 0 8 12" focusable="false" aria-hidden="true">
+                                                <path
+                                                    d="M5.874.35a1.28 1.28 0 011.761 0 1.165 1.165 0 010 1.695L3.522 6l4.113 3.955a1.165 1.165 0 010 1.694 1.28 1.28 0 01-1.76 0L0 6 5.874.35z">
+                                                </path>
+                                            </svg>
+                                            Previous
+                                        </div>
+                                            <li class="selected">
+                                            <span class="outer"><span class="inner">1</span></span>
+                                        </li>
+                                        <li><span class="outer"><span class="inner">2</span></span></li>
+                                        <li><span class="outer"><span class="inner">3</span></span></li>
+                                        <span class="extended"><svg xmlns="http://www.w3.org/2000/svg" width="10"
+                                                height="2" viewBox="0 0 10 2" aria-hidden="true">
+                                                <path
+                                                    d="M9 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1zM5 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1zM1 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1z">
+                                                </path>...
+                                            </svg></span>
+                                        <span class="more-page">33</span>
+                                        <div class="forward">
+                                            Next
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12"
+                                                viewBox="0 0 8 12" focusable="false" aria-hidden="true">
+                                                <path
+                                                    d="M2.126.35a1.28 1.28 0 00-1.761 0 1.165 1.165 0 000 1.695L4.478 6 .365 9.955a1.165 1.165 0 000 1.694 1.28 1.28 0 001.76 0L8 6 2.126.35z">
+                                                </path>
+                                            </svg>
 
-                                <li class="selected-page"><span class="outer"><span class="inner">1</span></span></li>
-                                <li><span>2</span></li>
-                                <li><span>3</span></li>
-                                <li><span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" viewBox="0 0 10 2" aria-hidden="true"><path d="M9 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1zM5 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1zM1 2c-.608 0-1-.425-1-1s.392-1 1-1 1 .448 1 1c0 .575-.392 1-1 1z"></path>...</svg></span></li>
-
-                                <li><span>32</span></li>
-                                <li>
-                                    <span class="forward">
-                                        Next
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12"
-                                            focusable="false" aria-hidden="true">
-                                            <path
-                                                d="M2.126.35a1.28 1.28 0 00-1.761 0 1.165 1.165 0 000 1.695L4.478 6 .365 9.955a1.165 1.165 0 000 1.694 1.28 1.28 0 001.76 0L8 6 2.126.35z">
-                                            </path>
-                                        </svg>
-                                    </span>
-                                </li>
-                            </ul>
-                          </span>
+                                        </div>
+                                    </ul>
+                                </span>
                         </div>
                     </div>
 
