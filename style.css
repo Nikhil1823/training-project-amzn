@@ -996,12 +996,11 @@ li.\35 {
     font-weight: 700;
     margin: 0 4px;
 }
-
+/* 
 .input-slider {
     padding-bottom: 2px;
     margin-bottom: 4px;
     display: flex;
-    /* border-top: 1px solid red; */
     align-items: center;
 }
 
@@ -1021,13 +1020,13 @@ li.\35 {
     padding: 0;
     display: flex;
 
-}
+} */
 
+/* 
 .slider-1 input {
     position: absolute;
     background-color: transparent;
     color: #bbbfbf;
-    /* width: 100%;s */
     height: 4px;
     line-height: 19px;
     z-index: 1;
@@ -1040,7 +1039,6 @@ li.\35 {
             rgb(187, 191, 191) 75%,
             rgb(187, 191, 191) 100%);
 
-    /* -moz-appearance: none; */
 
 }
 
@@ -1062,10 +1060,9 @@ li.\35 {
 .slider-1 input {
     z-index: 1;
     width: 100%;
-}
-
+} */
+/* 
 .slider-2 {
-    /* position: static; */
     display: flex;
     width: auto;
 
@@ -1074,7 +1071,6 @@ li.\35 {
 .input-slider .go-button {
     border-radius: 2px;
     background-color: white;
-    /* color: #0f1111; */
     margin-left: 8px;
     border-radius: 100px;
     border: 1px solid #888c8c;
@@ -1084,7 +1080,7 @@ li.\35 {
     padding: 1px 12.5px;
     display: flex;
     align-items: center;
-}
+} */
 
 div.pod,
 div.avail,

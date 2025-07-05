@@ -15,7 +15,7 @@ const resultHeader = `<div class="result-header">
                         <h2>Results</h2>
                         <p>Check each product page for other buying options.</p>
                     </div>`;
-  
+
 const lastPortion = `  <div class="pagination">
                         <div class="pagination-strip">
                             <ul class="page-bar">
@@ -81,14 +81,18 @@ const fetchData = async (items = []) => {
   return res;
 };
 
-const priceFilter = async (minPrice = 6000, maxPrice = 10000) => {
+const priceFilter = async (minPrice = 6000, maxPrice = 14500) => {
+  console.log("min values", minPrice);
+  console.log("values", maxPrice);
+  console.log("brands", brand);
+
   const data = await fetchData(brand);
+
   const resultItem = data.map((product) => {
     return product.filter((eachProduct) => {
-      return (
-        eachProduct.price.offerPrice >= minPrice &&
-        eachProduct.price.offerPrice <= maxPrice
-      );
+      const price = eachProduct.price.offerPrice;
+      console.log("Checking:", eachProduct.price.offerPrice);
+      return price >= minPrice && price <= maxPrice;
     });
   });
 
@@ -100,6 +104,8 @@ const priceFilter = async (minPrice = 6000, maxPrice = 10000) => {
 const brandButton = document.querySelectorAll("div.brands div.input-div input");
 brandButton.forEach((button) => {
   button.addEventListener("click", async () => {
+    const brandTag = button.nextElementSibling;
+    brandTag.classList.toggle("selected-brand");
     console.log(button.value);
     if (button.checked) {
       brand.unshift(button.value);
@@ -273,3 +279,24 @@ const starFilter = async (starCount = 4.5) => {
 const domInjector = (products) => {
   resultDiv.innerHTML = resultHeader + products + lastPortion;
 };
+
+const sliderOne = document.getElementById("slider-1");
+const minLabel = document.getElementById("lower-limit");
+const sliderTwo = document.getElementById("slider-2");
+const maxLabel = document.getElementById("upper-limit");
+
+const helperFunction = (slider, label, suffix = "") => {
+  slider.addEventListener("input", (e) => {
+    const value = e.target.value;
+
+    label.textContent = `₹${Number(value).toLocaleString()}${suffix}`;
+  });
+
+  slider.addEventListener("change", async function (e) {
+    const value = e.target.value;
+    await priceFilter();
+  });
+};
+
+helperFunction(sliderOne, minLabel);
+helperFunction(sliderTwo, maxLabel, "+");
