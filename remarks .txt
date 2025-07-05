@@ -211,3 +211,143 @@ div.delivery {
 
 }
 }
+
+
+pagination   
+
+
+
+div.pagination {
+    width: 100%;
+    /* background-color: red; */
+    grid-column: -1/1;
+    margin: 8px 0 16px 0;
+    padding: 0 4px;
+    grid-column: -1/1;
+    height: 47.6px;
+    /* border: 1px solid #d5d9d9; */
+}
+
+
+div.pagination div.pagination-strip {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+/* div.outer-wrapper {
+    display: flex;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+
+} */
+
+span.s-page-span {
+    display: inline-block;
+    white-space: nowrap;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+ul.page-bar li span.back {
+    color: #6f7373;
+    /* border: 1px solid #d5d9d9; */
+    border-right: none;
+    /* border-bottom-left-radius: 8px; */
+    min-width: 70px;
+    display: inline-block;
+    line-height: 46px;
+    padding: 0 12px;
+    white-space: nowrap;
+    border-left: 1px solid #d5d9d9;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0 12px;
+}
+
+ul.page-bar li:first-of-type {
+    border-left: 1px solid #d5d9d9;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+ul.page-bar li svg {
+    fill: #6f7373;
+    margin-top: 17px;
+    margin-right: 7px;
+}
+
+ul.page-bar li span.forward svg {
+    margin-right: 0;
+    margin-left: 7px;
+    fill: #0f1111;
+}
+
+
+ul.page-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+
+
+
+}
+
+ul.page-bar li span {
+    padding: 0 12px;
+}
+
+ul.page-bar li {
+    border-top: 1px solid #d5d9d9;
+    border-bottom: 1px solid #d5d9d9;
+    line-height: 46px;
+
+    /* display: inline-block; */
+    /* aspect-ratio: 1/1; */
+    /* height: 100%; */
+}
+
+li.selected-page {
+    /* border: 1px solid #0f1111; */
+    font-weight: 700;
+    /* border-top: 1px solid black; */
+}
+
+ul.page-bar li span.outer {
+    line-height: 20px;
+    font-size: 14px;
+}
+
+ul.page-bar li span.inner {
+    border: 1px solid #0f1111;
+    /* line-height: 46px; */
+    padding: 0 11px;
+}
+
+body>main>aside.result-section>div>div>div.pagination>div>ul>li.selected-page {
+    display: inline-block;
+    padding: 0;
+    border: 1px solid black;
+}
+
+
+
+body>main>aside.result-section>div>div>div.pagination>div>ul>li.selected-page span span {
+    padding: 0 11px;
+    /* border: 1px solid #0f1111;    */
+    font-weight: 700;
+}
+
+ul.page-bar li span.forward {
+    white-space: nowrap;
+    min-width: 69px;
+    /* border: 1px solid #d5d9d9; */
+    /* border-radius: 8px; */
+    border-left: none;
+    line-height: 46px;
+    display: inline-block;
+    padding: 0 12px 0 13px;
+
+}
+
