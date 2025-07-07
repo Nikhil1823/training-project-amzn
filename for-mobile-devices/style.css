@@ -568,8 +568,9 @@ button div.filter-wrapper span.arrow::after {
 div.page-wrapper div.result-header {
     grid-column: -1/1;
     /* height: calc(100% - 4px); */
-    padding: bottom 4px;
+    /* padding: bottom 4px; */
     margin: 0 -4px;
+    margin-bottom: 4px;
 
 }
 
@@ -578,4 +579,351 @@ div.result-header span {
     line-height: 16px;
     color: rgb(86, 89, 89);
     padding: 0 8px;
+}
+
+main#contents div.card-layout {
+    grid-column: auto / span 12;
+}
+
+div.card-layout div.card-layout-container {
+    padding: 0 4px;
+    height: 100%;
+    padding-bottom: 8px;
+    /* remember if i want i can add another wrapper around this and add margin-bottom instead and adjust height accordingly */
+}
+
+div.card-layout-container div.card-layout-wrapper {
+    border-radius: 4px;
+    transform: translate3d(0, 0, 0);
+    border: 1px solid #f5f5f5;
+}
+
+div.card-layout-wrapper div.card-content {
+    align-items: stretch;
+    display: flex;
+
+    flex-flow: row wrap;
+    align-content: flex-start;
+
+    margin: 0 -8px 0 -4px;
+    /* overflow: visible ; */
+}
+
+div.card-content div.image-container {
+    width: calc(.41667 * (100vw - 8px));
+    /* height: 100%;  unnecessary*/
+}
+
+div.image-container div.image-wrapper {
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+div.image-wrapper div.is-best-seller {
+    background-color: #f8f8f8;
+    ;
+}
+
+div.is-best-seller span.seller-wrapper {
+    margin: 4px 0 0 4px;
+    display: inline-block;
+}
+
+span.seller-wrapper span.seller-tag {
+    padding: 1px 4px 1px 4px;
+    height: 20px;
+    align-content: center;
+    display: grid;
+    border-radius: 4px;
+    max-width: 160px;
+    background-color: #D14900;
+    line-height: 18px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff;
+}
+
+div.image-wrapper div.image-wrapper-div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 8px;
+    background-color: rgb(248, 248, 248);
+
+}
+
+div.image-div img {
+    max-height: 170px;
+    vertical-align: top;
+    max-width: 100%;
+    text-align: center;
+}
+
+div.more-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(17, 17, 17, .3);
+    position: absolute;
+    /* top: 9px;
+    left: 8px; */
+}
+
+div.more-image img {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    vertical-align: top;
+    max-width: 100%;
+}
+
+div.card-content div.content-wrapper {
+    width: calc(.58333 * (100vw - 8px));
+    padding: 0 4px;
+    height: 100%;
+
+}
+
+
+div.content-wrapper div.content-wrapper-inner {
+    margin: 8px 0;
+    padding-right: 8px;
+
+
+}
+
+div.content-wrapper-inner div.title {
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+}
+
+div.content-wrapper-inner div.title h2 {
+    max-height: 72px;
+    line-clamp: 3;
+    line-height: 20px;
+    font-size: 14px;
+    /* line-clamp: 3; */
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* display: flex;
+    align-items: center; */
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+}
+
+div.content-wrapper-inner div.rating {
+    padding-top: 4px;
+}
+
+div.rating div.rating-wrapper-1 {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+div.rating-wrapper-1 span.rating-number {
+    /* font-size: 12px;
+    line-height: 16px; */
+    font-size: 12px;
+    display: inline-block;
+
+}
+
+div.rating-wrapper-1 i.stars {
+    background-image: url(https://m.media-amazon.com/images/S/sash/Zf4KcHNXMx7zzfI.png);
+    /* margin-left: 2px; no needed */
+    background-position: -379px -497px;
+    background-size: 512px 512px;
+    height: 12px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    bottom: -1px;
+    left: -1px;
+}
+
+div.rating-wrapper-1 span.rating-count {
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    color: rgb(86, 89, 89);
+    font-weight: 400;
+    position: relative;
+    left: -1.1px;
+
+}
+
+div.rating span.buy-count {
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(86, 89, 89);
+
+}
+
+div.content-wrapper-inner div.price-div {
+    padding-bottom: 4px;
+
+}
+
+div.price-div div.price {
+    margin-bottom: 10.8px;
+    padding-top: 4px;
+
+}
+
+div.price span.symbol {
+    font-size: 13px;
+    position: relative;
+    line-height: normal;
+    top: -5.2px;
+
+}
+
+div.price span.value {
+    font-size: 22px;
+    line-height: normal;
+    font-weight: 400;
+    padding-right: 2px;
+}
+
+div.price span.mrp {
+    color: rgb(86, 89, 89);
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 300;
+
+}
+
+div.price span.actual-price {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: line-through;
+    color: rgb(86, 89, 89);
+    padding-left: .7px;
+
+}
+
+div.price span.discount {
+    font-weight: 300;
+    color: rgb(15, 17, 17);
+    font-size: 12px;
+    line-height: 16px;
+    padding-left: 2.15px;
+}
+
+
+
+div.price-div span.offer {
+    font-size: 12px;
+    line-height: 15.6px;
+    color: rgb(86, 89, 89);
+    font-weight: 300;
+    display: inline-block;
+
+}
+
+div.content-wrapper-inner div.delivery-div {
+    padding-top: 4px;
+}
+
+div.delivery div.is-prime {
+    margin-bottom: 3px;
+    vertical-align: middle;
+    line-height: 16px;
+}
+
+div.is-prime span.prime {
+    position: relative;
+    bottom: -1.5px;
+    line-height: 16px;
+}
+
+span.prime i.icon {
+    background-image: url(https://m.media-amazon.com/images/S/sash/IAiggOMz$2G$3oR.png);
+    width: 53px;
+    height: 15px;
+    background-position: -181px -128px;
+    background-size: 512px 256px;
+    display: inline-block;
+    margin-bottom: -1.75px;
+}
+
+div.delivery div.free {
+    margin-bottom: 4px;
+    vertical-align: middle;
+
+}
+
+div.delivery div.fast {
+    vertical-align: middle;
+}
+
+div.delivery span.text {
+    font-size: 12px;
+    line-height: 16px;
+
+}
+
+div.delivery span.date {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+}
+
+div.content-wrapper-inner div.service {
+    padding-top: 4px;
+}
+
+div.service span.text {
+    font-size: 12px;
+    line-height: 16px;
+    /* display: inline-block; */
+    font-weight: 400;
+    color: rgb(86, 89, 89);
+}
+
+div.content-wrapper-inner div.add-to-cart-wrapper {
+    padding-top: 4px;
+
+}
+
+div.add-to-cart-wrapper div.add-to-cart {
+    margin-top: 12px;
+    height: 31.6px;
+    /* only if needed */
+}
+
+div.add-to-cart span.button-wrapper {
+    background-color: #febd69;
+    border-radius: 99px;
+    background-color: rgb(255, 216, 20);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 15px;
+    line-height: 20.25px;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+span.button-wrapper button {
+    padding: 5px 12px;
+    line-height: 20px;
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
 }
