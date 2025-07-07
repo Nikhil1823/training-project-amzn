@@ -589,7 +589,7 @@ main#contents div.card-layout {
 
 div.card-layout div.card-layout-container {
     padding: 0 4px;
-    height: 100%;
+    /* height: 100%; */
     padding-bottom: 8px;
     /* remember if i want i can add another wrapper around this and add margin-bottom instead and adjust height accordingly */
 }
@@ -672,7 +672,10 @@ div.image-wrapper div.image-wrapper-div {
 }
 
 div.image-wrapper-div div.image-div {
+    display: flex;
+    justify-content: center;
     position: relative;
+    /* width: fit-content; */
 }
 
 div.image-div img {
@@ -680,6 +683,29 @@ div.image-div img {
     vertical-align: top;
     max-width: 100%;
     text-align: center;
+    position: relative;
+}
+
+div.image-div div.img-test {
+    vertical-align: top;
+    /* max-width: 100%; */
+    width: fit-content;
+    text-align: center;
+    position: relative;
+}
+
+
+div.img-test::after {
+    content: '';
+    /* width: 100%; */
+    /* width: fit-contenauto; */
+    background-color: rgba(0, 0, 0, 0.03);
+    /* background-color: red; */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    inset: 0;
+
 }
 
 div.more-image {
