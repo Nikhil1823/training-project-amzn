@@ -7,6 +7,13 @@ const starPairs = {
   4.5: `<i class="four5-test"></i>`,
 };
 // initial fetch
+
+// for mobile view
+const mobileContainer = document.querySelector(
+  "main.mobile-view div.page-wrapper div.card-layout"
+);
+
+//for 1280px screens
 const resultDiv = document.querySelector(
   "aside.result-section div.result-wrapper div.result-container"
 );
@@ -120,11 +127,12 @@ brandButton.forEach((button) => {
 });
 
 const populateData = (products) => {
-  return Object.entries(products)
-    .map(([key, val]) => {
-      return val
-        .map((data) => {
-          return `<div class="product-wrapper">
+  if (window.innerWidth >= 769) {
+    return Object.entries(products)
+      .map(([key, val]) => {
+        return val
+          .map((data) => {
+            return `<div class="product-wrapper">
                         <div class="product-content-wrapper">
                             <div class="best-seller-tag">
                                 <button style="display:none";><span>Best seller</span></button>
@@ -228,10 +236,146 @@ const populateData = (products) => {
 
                         </div>
                     </div>`;
-        })
-        .join("");
-    })
-    .join("");
+          })
+          .join("");
+      })
+      .join("");
+  } else {
+    return Object.entries(products)
+      .map(([key, val]) => {
+        return val
+          .map((data) => {
+            return `<div class="card-layout-container">
+                    <div class="card-layout-wrapper">
+
+                        <div class="card-content">
+                            <div class="image-container">
+                                <div class="image-wrapper">
+                                    <div class="is-best-seller" >
+                                   
+                                        <span class="seller-wrapper"style="display:none"; >
+                                            <span class="seller-tag">Best seller</span>
+
+                                        </span>
+                                    </div>
+
+                                    <div class="image-wrapper-div">
+                                        <div class="image-div">
+                                          <div class="img-test">
+                                              <img src=${data.images}
+                                                  alt="">
+                                            </div>
+                                        </div>
+                                        <div class="more-image">
+                                            <img src="https://m.media-amazon.com/images/I/01rrzVoKd5L.svg" alt="">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-wrapper">
+                                <div class="content-wrapper-inner">
+                                    <div class="title">
+                                        <h2>${data.title}
+
+                                        </h2>
+                                    </div>
+                                    <div class="rating">
+                                        <div class="rating-wrapper-1">
+                                            <span class="rating-number">${data.rating.starCount.toFixed(
+                                              1
+                                            )}
+                                            </span>
+                                            <i class="stars"></i>
+                                            <span class="rating-count">(${(Number(
+                                              data.rating.totalPurchase
+                                            ) > 1000
+                                              ? Number(
+                                                  data.rating.totalPurchase /
+                                                    1000
+                                                ).toFixed(1) + "K"
+                                              : data.rating.totalPurchase
+                                            ).trim()})</span>
+                                        </div>
+
+                                        <span class="buy-count">${
+                                          data.rating.recentPurchase
+                                        }</span>
+                                    </div>
+                                    <div class="price-div">
+                                        <div class="price">
+                                            <span class="symbol">₹</span><span class="value">${data.price.offerPrice.toLocaleString()}</span>
+                                            <span class="mrp">M.R.P:</span>
+                                            <span class="actual-price">₹${data.price.actualPrice.toLocaleString()}</span>
+                                            <span class="discount">(${
+                                              data.price.discount
+                                            }% off)</span>
+                                        </div>
+                                        ${(data.offers.offer1
+                                          ? `<span class="offer">
+                                            ${data.offers.offer1}
+                                        </span>`
+                                          : ``
+                                        ).trim()}
+                                    </div>
+                                    <div class="delivery-div">
+                                        <div class="delivery">
+                                        ${(data.isPrime
+                                          ? ` <div class="is-prime">
+                                                <span class="prime"><i class="icon"></i></span>
+                                            </div>`
+                                          : ``
+                                        ).trim()}
+                                          
+                                            <div class="free">
+                                                <span class="text">FREE delivery</span><span class="date">  ${
+                                                  data.delivery
+                                                    .split("FREE delivery")[1]
+                                                    .split("Or")[0]
+                                                }</span>
+                                            </div>
+                                            ${(data.delivery.split(
+                                              "fastest delivery"
+                                            )[1]
+                                              ? ` <div class="fast">
+                                                <span class="text">Or fastest delivery </span><span class="date">
+                                                    ${
+                                                      data.delivery.split(
+                                                        "fastest delivery"
+                                                      )[1]
+                                                    }</span>
+                                            </div>`
+                                              : ``
+                                            ).trim()}
+                                           
+                                        </div>
+                                    </div>
+                                    ${(data.serviceAvailable.service1
+                                      ? ` <div class="service">
+                                        <span class="text">Service: ${data.serviceAvailable.service1}</span>
+                                    </div>`
+                                      : ``
+                                    ).trim()}
+                                   
+                                    <div class="add-to-cart-wrapper">
+                                        <div class="add-to-cart">
+                                            <span class="button-wrapper"><button>Add to cart</button></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>`;
+          })
+          .join("");
+      })
+      .join("");
+  }
 };
 
 const unwantedThings = `  <div class="more-choice">
@@ -271,7 +415,16 @@ const starFilter = async (starCount = 4.5) => {
 };
 
 const domInjector = (products) => {
-  resultDiv.innerHTML = resultHeader + products + lastPortion;
+  console.log();
+
+  if (window.innerWidth >= 769) {
+    return (resultDiv.innerHTML = resultHeader + products + lastPortion);
+  } else {
+    console.log("yeah");
+    console.log(products);
+
+    mobileContainer.innerHTML = products;
+  }
 };
 
 const sliderOne = document.getElementById("slider-1");
