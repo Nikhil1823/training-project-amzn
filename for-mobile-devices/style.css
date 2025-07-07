@@ -232,6 +232,7 @@ div.search-field {
     position: relative;
     width: 100%;
     background: #fff;
+    overflow: clip;
 }
 
 div.search-wrapper input {
