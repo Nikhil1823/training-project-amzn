@@ -3079,6 +3079,20 @@ div.sm-tos p {
         margin: 30px 0 0 0;
     }
 
+    div.footer-wrapper div.lg-footer-to-top {
+        margin-bottom: 40px;
+        text-align: center;
+        background-color: rgb(55, 71, 90);
+    }
+
+    div.lg-footer-to-top span.to-top-text {
+        display: inline-block;
+        padding: 15px 0;
+        font-size: 13px;
+        line-height: 19px;
+        color: white;
+    }
+
     div.footer-container {
         max-width: 1000px;
         margin: 0 auto;
