@@ -284,7 +284,7 @@ const domInjector = (products) => {
     return (resultDiv.innerHTML = resultHeader + products + lastPortion);
   } else {
     console.log("yeah");
-    console.log(products);
+    // console.log(products);
 
     mobileContainer.innerHTML = products;
   }

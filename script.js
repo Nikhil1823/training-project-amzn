@@ -6,11 +6,17 @@ const starPairs = {
   3.5: `<i class="three5-test"></i>`,
   4.5: `<i class="four5-test"></i>`,
 };
+
+const smStarMap = {
+  4: `<i class="sm-stars-four"></i>`,
+  4.5: `<i class="sm-stars-four5"></i> `,
+  3.5: `<i class="sm-stars-three5"></i>`,
+};
 // initial fetch
 
 // for mobile view
 const mobileContainer = document.querySelector(
-  "main.mobile-view div.page-wrapper div.card-layout"
+  "main#contents.mobile-view div.sm-page-wrapper div.sm-card-layout"
 );
 
 //for 1280px screens
@@ -245,28 +251,28 @@ const populateData = (products) => {
       .map(([key, val]) => {
         return val
           .map((data) => {
-            return `<div class="card-layout-container">
-                    <div class="card-layout-wrapper">
+            return `<div class="sm-card-layout-container">
+                    <div class="sm-card-layout-wrapper">
 
-                        <div class="card-content">
-                            <div class="image-container">
-                                <div class="image-wrapper">
-                                    <div class="is-best-seller" >
+                        <div class="sm-card-content">
+                            <div class="sm-image-container">
+                                <div class="sm-image-wrapper">
+                                    <div class="sm-is-best-seller" >
                                    
-                                        <span class="seller-wrapper"style="display:none"; >
-                                            <span class="seller-tag">Best seller</span>
+                                        <span class="sm-seller-wrapper"style="display:none"; >
+                                            <span class="sm-seller-tag">Best seller</span>
 
                                         </span>
                                     </div>
 
-                                    <div class="image-wrapper-div">
-                                        <div class="image-div">
-                                          <div class="img-test">
+                                    <div class="sm-image-wrapper-div">
+                                        <div class="sm-image-div">
+                                          <div class="sm-img-test">
                                               <img src=${data.images}
                                                   alt="">
                                             </div>
                                         </div>
-                                        <div class="more-image">
+                                        <div class="sm-more-image">
                                             <img src="https://m.media-amazon.com/images/I/01rrzVoKd5L.svg" alt="">
                                         </div>
 
@@ -274,21 +280,22 @@ const populateData = (products) => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="content-wrapper">
-                                <div class="content-wrapper-inner">
-                                    <div class="title">
+                            <div class="sm-content-wrapper">
+                                <div class="sm-content-wrapper-inner">
+                                    <div class="sm-title">
                                         <h2>${data.title}
 
                                         </h2>
                                     </div>
-                                    <div class="rating">
-                                        <div class="rating-wrapper-1">
-                                            <span class="rating-number">${data.rating.starCount.toFixed(
+                                    <div class="sm-rating">
+                                        <div class="sm-rating-wrapper-1">
+                                            <span class="sm-rating-number">${data.rating.starCount.toFixed(
                                               1
                                             )}
                                             </span>
-                                            <i class="stars"></i>
-                                            <span class="rating-count">(${(Number(
+                                            ${smStarMap[data.rating.starCount]}
+                                         
+                                            <span class="sm-rating-count">(${(Number(
                                               data.rating.totalPurchase
                                             ) > 1000
                                               ? Number(
@@ -299,37 +306,37 @@ const populateData = (products) => {
                                             ).trim()})</span>
                                         </div>
 
-                                        <span class="buy-count">${
+                                        <span class="sm-buy-count">${
                                           data.rating.recentPurchase
                                         }</span>
                                     </div>
-                                    <div class="price-div">
-                                        <div class="price">
-                                            <span class="symbol">₹</span><span class="value">${data.price.offerPrice.toLocaleString()}</span>
-                                            <span class="mrp">M.R.P:</span>
-                                            <span class="actual-price">₹${data.price.actualPrice.toLocaleString()}</span>
-                                            <span class="discount">(${
+                                    <div class="sm-price-div">
+                                        <div class="sm-price">
+                                            <span class="sm-symbol">₹</span><span class="sm-value">${data.price.offerPrice.toLocaleString()}</span>
+                                            <span class="sm-mrp">M.R.P:</span>
+                                            <span class="sm-actual-price">₹${data.price.actualPrice.toLocaleString()}</span>
+                                            <span class="sm-discount">(${
                                               data.price.discount
                                             }% off)</span>
                                         </div>
                                         ${(data.offers.offer1
-                                          ? `<span class="offer">
+                                          ? `<span class="sm-offer">
                                             ${data.offers.offer1}
                                         </span>`
                                           : ``
                                         ).trim()}
                                     </div>
-                                    <div class="delivery-div">
-                                        <div class="delivery">
+                                    <div class="sm-delivery-div">
+                                        <div class="sm-delivery">
                                         ${(data.isPrime
-                                          ? ` <div class="is-prime">
-                                                <span class="prime"><i class="icon"></i></span>
+                                          ? ` <div class="sm-is-prime">
+                                                <span class="sm-prime"><i class="sm-icon"></i></span>
                                             </div>`
                                           : ``
                                         ).trim()}
                                           
-                                            <div class="free">
-                                                <span class="text">FREE delivery</span><span class="date">  ${
+                                            <div class="sm-free">
+                                                <span class="sm-text">FREE delivery</span><span class="sm-date">  ${
                                                   data.delivery
                                                     .split("FREE delivery")[1]
                                                     .split("Or")[0]
@@ -338,8 +345,8 @@ const populateData = (products) => {
                                             ${(data.delivery.split(
                                               "fastest delivery"
                                             )[1]
-                                              ? ` <div class="fast">
-                                                <span class="text">Or fastest delivery </span><span class="date">
+                                              ? ` <div class="sm-fast">
+                                                <span class="sm-text">Or fastest delivery </span><span class="sm-date">
                                                     ${
                                                       data.delivery.split(
                                                         "fastest delivery"
@@ -352,15 +359,15 @@ const populateData = (products) => {
                                         </div>
                                     </div>
                                     ${(data.serviceAvailable.service1
-                                      ? ` <div class="service">
-                                        <span class="text">Service: ${data.serviceAvailable.service1}</span>
+                                      ? ` <div class="sm-service">
+                                        <span class="sm-text">Service: ${data.serviceAvailable.service1}</span>
                                     </div>`
                                       : ``
                                     ).trim()}
                                    
-                                    <div class="add-to-cart-wrapper">
-                                        <div class="add-to-cart">
-                                            <span class="button-wrapper"><button>Add to cart</button></span>
+                                    <div class="sm-add-to-cart-wrapper">
+                                        <div class="sm-add-to-cart">
+                                            <span class="sm-button-wrapper"><button>Add to cart</button></span>
                                         </div>
                                     </div>
                                 </div>
@@ -415,13 +422,10 @@ const starFilter = async (starCount = 4.5) => {
 };
 
 const domInjector = (products) => {
-  console.log();
-
   if (window.innerWidth >= 769) {
     return (resultDiv.innerHTML = resultHeader + products + lastPortion);
   } else {
     console.log("yeah");
-    console.log(products);
 
     mobileContainer.innerHTML = products;
   }

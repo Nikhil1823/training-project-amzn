@@ -790,10 +790,37 @@ div.sm-rating-wrapper-1 span.sm-rating-number {
 
 }
 
-div.sm-rating-wrapper-1 i.sm-stars {
+div.sm-rating-wrapper-1 i.sm-stars-four {
     background-image: url(https://m.media-amazon.com/images/S/sash/Zf4KcHNXMx7zzfI.png);
     /* margin-left: 2px; no needed */
     background-position: -379px -497px;
+    background-size: 512px 512px;
+    height: 12px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    bottom: -1px;
+    left: -1px;
+}
+
+div.sm-rating-wrapper-1 i.sm-stars-three5 {
+    background-image: url(https://m.media-amazon.com/images/S/sash/Zf4KcHNXMx7zzfI.png);
+    /* margin-left: 2px; no needed */
+    background-position: -14px -351px;
+    background-size: 512px 512px;
+    height: 12px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    bottom: -1px;
+    left: -1px;
+}
+
+div.sm-rating-wrapper-1 i.sm-stars-four5 {
+    /* 4.5  */
+    background-image: url(https://m.media-amazon.com/images/S/sash/Zf4KcHNXMx7zzfI.png);
+    /* margin-left: 2px; no needed */
+    background-position: -2px -351px;
     background-size: 512px 512px;
     height: 12px;
     width: 60px;
