@@ -156,9 +156,9 @@ const populateData = (products) => {
                                         <div class="product-star">
                                             ${starPairs[data.rating.starCount]}
                                             <span class="arrow-down"></span>
-                                            <span class="count">${
+                                            <span class="count">${Number(
                                               data.rating.totalPurchase
-                                            }</span>
+                                            ).toLocaleString()}</span>
 
                                         </div>
                                     </div>
