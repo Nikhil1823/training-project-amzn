@@ -635,17 +635,18 @@
                         <span class="heading">Price</span>
                     </div>
                     <div id="value">
-                        <p id="lower-limit"> ₹195</p>
+                        <p id="lower-limit"> ₹500</p>
                         <span class="dash">–</span>
                         <p id="upper-limit"> ₹146,000+</p>
                     </div>
 
                     <div class="input-slider">
                         <div class="slider-wrapper">
-                            <div class="sliders"><input type="range" id="slider-1" min="195" max="10999" value="195">
+                            <div class="sliders lower">
+                                <input type="range" id="slider-1" min="195" max="146000" value="500">
                             </div>
-                            <div class="sliders"><input type="range" id="slider-2" min="11000" max="146000"
-                                    value="146000">
+                            <div class="sliders higher">
+                                <input type="range" id="slider-2" max="146000" min="1000" value="146000">
                             </div>
                         </div>
                         <div id="go-button">Go</div>
@@ -749,7 +750,7 @@
 
         </aside>
     </main>
-    <footer class="laptop-view" id="desktop-footer">
+    <!-- <footer class="laptop-view" id="desktop-footer">
         <div class="footer-wrapper">
             <div class="lg-footer-to-top">
                 <span class="to-top-text">Back to top</span>
@@ -915,8 +916,325 @@
             </div>
         </div>
     </footer>
+ -->
+
+    <!-- 
+    <footer class="laptop-view" id="desktop-footer">
+
+        <div class="lg-footer-wrapper">
+            <div class="lg-footer-to-top">
+                <p class="lg-to-top-text">Back to top</p>
+            </div>
+            <div class="lg-service-container">
+                <div class="lg-service-wrapper">
+                    <div class="lg-service-div">
+                        <div class="lg-service-header">Get to Know Us</div>
+                        <ul class="service-list">
+                            <li><a href="">About Amazon</a></li>
+                            <li><a href="">Careers</a></li>
+                            <li><a href="">Press Releases</a></li>
+                            <li><a href="">Amazon Science</a></li>
+                        </ul>
+                    </div>
+                    <div class="lg-service-div">
+                        <div class="lg-service-header">Connect with Us</div>
+                        <ul class="service-list">
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Twitter</a></li>
+                            <li><a href="">Instagram</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="lg-service-div">
+                        <div class="lg-service-header">Make Money with Us</div>
+                        <ul class="service-list">
+                            <li><a href="">Sell on Amazon</a></li>
+                            <li><a href="">Sell under Amazon Accelerator</a></li>
+                            <li><a href="">Protect and Build Your Brand</a></li>
+                            <li><a href="">Amazon Global Selling</a></li>
+                            <li><a href="">Supply to Amazon</a></li>
+                            <li><a href="">Become an Affiliate</a></li>
+                            <li><a href="">Fulfilment by Amazon</a></li>
+                            <li><a href="">Advertise Your Products</a></li>
+                            <li><a href="">Amazon Pay on Merchants</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="lg-service-div">
+                        <div class="lg-service-header">Let Us Help You</div>
+                        <ul class="service-list">
+                            <li><a href="">Your Account</a></li>
+                            <li><a href="">Returns Centre</a></li>
+                            <li><a href="">Recalls and Product Safety Alerts</a></li>
+                            <li><a href="">100% Purchase Protection</a></li>
+                            <li><a href="">Amazon App Download</a></li>
+                            <li><a href="">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lg-extra-gap"></div>
+            <div class="lg-footer-links">
+                <span class="lg-amzn-icon">
+                    <div class="lg-amzn-icon-wrapper">
+                        <a href="" class="lg-amzn-icon">
+                            <i class="amzn"></i>
+                        </a>
+                    </div>
+                </span>
+                <span class="lg-nation-icon-container">
+                    <div class="lg-nation-button-inner-wrapper">
+                        <div class="lg-button-left">
+                            <a href="" class="lg-button-wrapper">
+                                <i></i><span class="text">English</span>
+                            </a>
+                            <button class="lg-button-arrow">
+
+                            </button>
+                        </div>
+                        <div class="lg-button-left">
+                            <span class="flag"></span><span class="text">India</span>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+            <div class="lg-footer-desc-line">
+                <div class="lg-footer-desc-container">
+                    <ul class="desc">
+                        <li>
+                            <a href="">
+                                <h5>AbeBooks</h5>
+                                <span>Books, art <br> & collectibles</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h5>Amazon Web Services</h5>
+                                <span>Scalable Cloud <br>Computing Services</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h5>Audible</h5>
+                                <span>Download<br>Audio Books</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h5>IMDb</h5>
+                                <span>Movies, TV<br>&amp; Celebrities</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <ul class="desc">
+                        <li>
+                            <a href="">
+                                <h5>Shopbop</h5>
+                                <span>Designer<br>Fashion Brands</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h5>Amazon Business</h5>
+                                <span>Everything For<br>Your Business</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h5>Prime Now</h5>
+                                <span>2-Hour Delivery<br>on Everyday Items</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h5>Amazon Prime Music</h5>
+                                <span>100 million songs, ad-free<br>Over 15 million podcast episodes</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="lg-tos">
+                <ul class="lg-tos-item">
+                    <li><a href="">Conditions of Use & Sale</a></li>
+                    <li><a href="">Privacy Notice</a></li>
+                    <li><a href="">Interest-Based Ads</a></li>
+
+                </ul>
+                <span class="lg-copyright">© 1996-2025, Amazon.com, Inc. or its affiliates</span>
+            </div>
+        </div>
+    </footer> -->
+    <footer class="laptop-view" id="desktop-footer">
+        <div class="footer-wrapper">
+            <div class="lg-footer-to-top">
+                <span class="to-top-text">Back to top</span>
+            </div>
+            <div class="footer-container">
+                <div class="element-wrapper">
+                    <div class="elements element-1">
+                        <div class="itemHeader">Get to Know Us</div>
+                        <ul class="item">
+                            <li class="footer-shaker"><a href="">About Amazon</a></li>
+                            <li><a href="">Careers</a></li>
+                            <li> <a href="">Press Releases</a></li>
+                            <li> <a href="">Amazon Science</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="empty-div"></div>
+                    <div class="elements element-2">
+                        <div class="itemHeader">Connect with Us</div>
+                        <ul class="item">
+                            <li class="footer-shaker"><a href="">Facebook</a></li>
+                            <li><a href="">Twitter</a></li>
+                            <li><a href="">Instagram</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="empty-div"></div>
+                    <div class="elements element-3">
+                        <div class="itemHeader">Make Money with Us</div>
+                        <ul class="item">
+                            <li><a href="">Sell on Amazon</a></li>
+                            <li><a href="">Sell under Amazon Accelerator</a></li>
+                            <li><a href="">Protect and Build Your Brand</a></li>
+                            <li>
+                                <a href="">Amazon Global Selling</a>
+                            </li>
+                            <li class="footer-shaker"><a href="">Supply to Amazon</a></li>
+                            <li><a href="">Become an Affiliate</a></li>
+                            <li><a href="">Fulfilment by Amazon</a></li>
+                            <li><a href="">Advertise Your Products</a></li>
+                            <li class="footer-shaker"><a href="">Amazon Pay on Merchants</a></li>
+                        </ul>
+                    </div>
+                    <div class="empty-div"></div>
+                    <div class="elements element-4">
+                        <div class="itemHeader">Let Us Help You</div>
+                        <ul class="item">
+                            <li><a href="">Your Account</a></li>
+                            <li><a href="">Returns Centre</a></li>
+                            <li class="footer-shaker"><a href="">Recalls and Product Safety Alerts</a></li>
+                            <li><a href="">100% Purchase Protection</a></li>
+                            <li class="footer-shaker"><a href="">Amazon App Download</a></li>
+                            <li><a href="">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
 
 
+            </div>
+
+            <div class="footer-border"></div>
+            <div class="icon-div">
+                <span class="icon-span">
+                    <div class="icon-wrapper">
+                        <div class="icon">
+                            <i class="amazon-icon"></i>
+                        </div>
+                    </div>
+                </span>
+                <span class="button-collection">
+                    <div class="lang-text">
+                        <div class="lang-wrapper">
+
+                            <i class="world-icon"></i>
+                            <span>English</span>
+                        </div>
+                        <button></button>
+                    </div>
+
+                    <span class="nation-span">
+                        <i class="nation-icon"></i>
+                        <span>India</span>
+                    </span>
+
+                </span>
+
+
+
+            </div>
+
+            <div class="services">
+                <div class="service-wrapper">
+                    <ul>
+                        <li>
+
+                            <h5>AbeBooks</h5>
+                            <span>Books, art <br>&amp; collectibles</span>
+
+
+                        </li>
+                        <li class="empty-list"></li>
+                        <li>
+
+                            <h5>Amazon Web Services</h5>
+                            <span>Scalable Cloud<br>Computing Services</span>
+
+                        </li>
+                        <li class="empty-list"></li>
+                        <li>
+
+                            <h5>Audible</h5>
+                            <span>Download<br>Audio Books</span>
+
+                        </li>
+                        <li class="empty-list"></li>
+                        <li>
+
+                            <h5>IMDb</h5>
+                            <span>Movies, TV<br>&amp; Celebrities</span>
+
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+
+                            <h5>Shopbop</h5>
+                            <span>Designer<br>Fashion Brands</span>
+
+                        </li>
+                        <li class="empty-list"></li>
+                        <li>
+
+                            <h5> Amazon Business</h5>
+                            <span>Everything For<br>Your Business</span>
+
+                        </li>
+                        <li class="empty-list"></li>
+                        <li>
+
+                            <h5>Prime Now</h5>
+                            <span>2-Hour Delivery<br>on Everyday Items</span>
+
+                        </li>
+                        <li class="empty-list"></li>
+                        <li>
+
+                            <h5>Amazon Prime Music</h5>
+                            <span>100 million songs, ad-free<br>Over 15 million podcast episodes</span>
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="tos">
+                <ul>
+                    <li>Conditions of Use & Sale</li>
+                    <li>Privacy Notice</li>
+                    <li>Interest-Based Ads</li>
+                </ul>
+
+                <span>© 1996-2025, Amazon.com, Inc. or its affiliates</span>
+
+            </div>
+        </div>
+    </footer>
 
 
 

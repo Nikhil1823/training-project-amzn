@@ -79,10 +79,13 @@ const lastPortion = `
 
                 </div>`;
 
-window.addEventListener("load", async () => {
+const domInjectionHelper = async () => {
   const data = await fetchData(brand);
   domInjector(populateData(data));
-});
+};
+
+window.addEventListener("load", domInjectionHelper);
+window.addEventListener("resize", domInjectionHelper);
 
 // to fetch data
 const fetchData = async (items = []) => {
@@ -133,7 +136,7 @@ brandButton.forEach((button) => {
 });
 
 const populateData = (products) => {
-  if (window.innerWidth >= 769) {
+  if (window.innerWidth >= 1100) {
     return Object.entries(products)
       .map(([key, val]) => {
         return val
@@ -422,7 +425,9 @@ const starFilter = async (starCount = 4.5) => {
 };
 
 const domInjector = (products) => {
-  if (window.innerWidth >= 769) {
+  if (window.innerWidth >= 1100) {
+    console.log("yeagyhsh");
+
     return (resultDiv.innerHTML = resultHeader + products + lastPortion);
   } else {
     console.log("yeah");
@@ -437,9 +442,11 @@ const sliderTwo = document.getElementById("slider-2");
 const maxLabel = document.getElementById("upper-limit");
 let minVal = 195;
 let maxVal = 145000;
+
 const helperFunction = (slider, label, min, suffix = "") => {
   slider.addEventListener("input", (e) => {
     const value = e.target.value;
+    // console.log("yeah working");
 
     label.textContent = `₹${Number(value).toLocaleString()}${suffix}`;
     min ? (minVal = Number(value)) : (maxVal = Number(value));
