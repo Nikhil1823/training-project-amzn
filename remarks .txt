@@ -351,3 +351,7 @@ ul.page-bar li span.forward {
 
 }
 
+
+
+desktop-nav-1,desktop-nav-2,desktop-header,desktop-header-2,desktop-main
+desktop-footer

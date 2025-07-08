@@ -6,7 +6,20 @@ const starPairs = {
   3.5: `<i class="three5-test"></i>`,
   4.5: `<i class="four5-test"></i>`,
 };
+
+const smStarMap = {
+  4: `<i class="sm-stars-four"></i>`,
+  4.5: `<i class="sm-stars-four5"></i> `,
+  3.5: `<i class="sm-stars-three5"></i>`,
+};
 // initial fetch
+
+// for mobile view
+const mobileContainer = document.querySelector(
+  "main#contents.mobile-view div.sm-page-wrapper div.sm-card-layout"
+);
+
+//for 1280px screens
 const resultDiv = document.querySelector(
   "aside.result-section div.result-wrapper div.result-container"
 );
@@ -66,10 +79,13 @@ const lastPortion = `
 
                 </div>`;
 
-window.addEventListener("load", async () => {
+const domInjectionHelper = async () => {
   const data = await fetchData(brand);
   domInjector(populateData(data));
-});
+};
+
+window.addEventListener("load", domInjectionHelper);
+window.addEventListener("resize", domInjectionHelper);
 
 // to fetch data
 const fetchData = async (items = []) => {
@@ -120,11 +136,12 @@ brandButton.forEach((button) => {
 });
 
 const populateData = (products) => {
-  return Object.entries(products)
-    .map(([key, val]) => {
-      return val
-        .map((data) => {
-          return `<div class="product-wrapper">
+  if (window.innerWidth >= 1100) {
+    return Object.entries(products)
+      .map(([key, val]) => {
+        return val
+          .map((data) => {
+            return `<div class="product-wrapper">
                         <div class="product-content-wrapper">
                             <div class="best-seller-tag">
                                 <button style="display:none";><span>Best seller</span></button>
@@ -148,9 +165,9 @@ const populateData = (products) => {
                                         <div class="product-star">
                                             ${starPairs[data.rating.starCount]}
                                             <span class="arrow-down"></span>
-                                            <span class="count">${
+                                            <span class="count">${Number(
                                               data.rating.totalPurchase
-                                            }</span>
+                                            ).toLocaleString()}</span>
 
                                         </div>
                                     </div>
@@ -228,10 +245,147 @@ const populateData = (products) => {
 
                         </div>
                     </div>`;
-        })
-        .join("");
-    })
-    .join("");
+          })
+          .join("");
+      })
+      .join("");
+  } else {
+    return Object.entries(products)
+      .map(([key, val]) => {
+        return val
+          .map((data) => {
+            return `<div class="sm-card-layout-container">
+                    <div class="sm-card-layout-wrapper">
+
+                        <div class="sm-card-content">
+                            <div class="sm-image-container">
+                                <div class="sm-image-wrapper">
+                                    <div class="sm-is-best-seller" >
+                                   
+                                        <span class="sm-seller-wrapper"style="display:none"; >
+                                            <span class="sm-seller-tag">Best seller</span>
+
+                                        </span>
+                                    </div>
+
+                                    <div class="sm-image-wrapper-div">
+                                        <div class="sm-image-div">
+                                          <div class="sm-img-test">
+                                              <img src=${data.images}
+                                                  alt="">
+                                            </div>
+                                        </div>
+                                        <div class="sm-more-image">
+                                            <img src="https://m.media-amazon.com/images/I/01rrzVoKd5L.svg" alt="">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm-content-wrapper">
+                                <div class="sm-content-wrapper-inner">
+                                    <div class="sm-title">
+                                        <h2>${data.title}
+
+                                        </h2>
+                                    </div>
+                                    <div class="sm-rating">
+                                        <div class="sm-rating-wrapper-1">
+                                            <span class="sm-rating-number">${data.rating.starCount.toFixed(
+                                              1
+                                            )}
+                                            </span>
+                                            ${smStarMap[data.rating.starCount]}
+                                         
+                                            <span class="sm-rating-count">(${(Number(
+                                              data.rating.totalPurchase
+                                            ) > 1000
+                                              ? Number(
+                                                  data.rating.totalPurchase /
+                                                    1000
+                                                ).toFixed(1) + "K"
+                                              : data.rating.totalPurchase
+                                            ).trim()})</span>
+                                        </div>
+
+                                        <span class="sm-buy-count">${
+                                          data.rating.recentPurchase
+                                        }</span>
+                                    </div>
+                                    <div class="sm-price-div">
+                                        <div class="sm-price">
+                                            <span class="sm-symbol">₹</span><span class="sm-value">${data.price.offerPrice.toLocaleString()}</span>
+                                            <span class="sm-mrp">M.R.P:</span>
+                                            <span class="sm-actual-price">₹${data.price.actualPrice.toLocaleString()}</span>
+                                            <span class="sm-discount">(${
+                                              data.price.discount
+                                            }% off)</span>
+                                        </div>
+                                        ${(data.offers.offer1
+                                          ? `<span class="sm-offer">
+                                            ${data.offers.offer1}
+                                        </span>`
+                                          : ``
+                                        ).trim()}
+                                    </div>
+                                    <div class="sm-delivery-div">
+                                        <div class="sm-delivery">
+                                        ${(data.isPrime
+                                          ? ` <div class="sm-is-prime">
+                                                <span class="sm-prime"><i class="sm-icon"></i></span>
+                                            </div>`
+                                          : ``
+                                        ).trim()}
+                                          
+                                            <div class="sm-free">
+                                                <span class="sm-text">FREE delivery</span><span class="sm-date">  ${
+                                                  data.delivery
+                                                    .split("FREE delivery")[1]
+                                                    .split("Or")[0]
+                                                }</span>
+                                            </div>
+                                            ${(data.delivery.split(
+                                              "fastest delivery"
+                                            )[1]
+                                              ? ` <div class="sm-fast">
+                                                <span class="sm-text">Or fastest delivery </span><span class="sm-date">
+                                                    ${
+                                                      data.delivery.split(
+                                                        "fastest delivery"
+                                                      )[1]
+                                                    }</span>
+                                            </div>`
+                                              : ``
+                                            ).trim()}
+                                           
+                                        </div>
+                                    </div>
+                                    ${(data.serviceAvailable.service1
+                                      ? ` <div class="sm-service">
+                                        <span class="sm-text">Service: ${data.serviceAvailable.service1}</span>
+                                    </div>`
+                                      : ``
+                                    ).trim()}
+                                   
+                                    <div class="sm-add-to-cart-wrapper">
+                                        <div class="sm-add-to-cart">
+                                            <span class="sm-button-wrapper"><button>Add to cart</button></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>`;
+          })
+          .join("");
+      })
+      .join("");
+  }
 };
 
 const unwantedThings = `  <div class="more-choice">
@@ -271,7 +425,15 @@ const starFilter = async (starCount = 4.5) => {
 };
 
 const domInjector = (products) => {
-  resultDiv.innerHTML = resultHeader + products + lastPortion;
+  if (window.innerWidth >= 1100) {
+    console.log("yeagyhsh");
+
+    return (resultDiv.innerHTML = resultHeader + products + lastPortion);
+  } else {
+    console.log("yeah");
+
+    mobileContainer.innerHTML = products;
+  }
 };
 
 const sliderOne = document.getElementById("slider-1");
@@ -280,9 +442,11 @@ const sliderTwo = document.getElementById("slider-2");
 const maxLabel = document.getElementById("upper-limit");
 let minVal = 195;
 let maxVal = 145000;
+
 const helperFunction = (slider, label, min, suffix = "") => {
   slider.addEventListener("input", (e) => {
     const value = e.target.value;
+    // console.log("yeah working");
 
     label.textContent = `₹${Number(value).toLocaleString()}${suffix}`;
     min ? (minVal = Number(value)) : (maxVal = Number(value));
