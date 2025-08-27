@@ -282,10 +282,7 @@ const domInjector = (products) => {
 
   if (window.innerWidth >= 769) {
     return (resultDiv.innerHTML = resultHeader + products + lastPortion);
-  } else {
-    console.log("yeah");
-    // console.log(products);
-
-    mobileContainer.innerHTML = products;
-  }
+  } else 
+mobileContainer.innerHTML = products;
+  
 };
