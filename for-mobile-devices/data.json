@@ -15,9 +15,7 @@
         "discount": 35
       },
       "isPrime": true,
-      "offers": {
-        "offer1": "Up to 5% back with Amazon Pay ICICI cardUp to 5% back with Amazon Pay"
-      },
+      
       "delivery": "FREE delivery Sun, 29 Jun Or fastest delivery Tomorrow, 28 Jun",
       "availability": {
         "item": "unlimited",
