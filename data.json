@@ -13,11 +13,7 @@
         "offerPrice": 1589,
         "actualPrice": 1900,
         "discount": 16
-      },
-      "isPrime": true,
-      "offers": {
-        "offer1": ""
-      
+      }
     },
     {
       "title": "Apple EarPods with Lightning Connector",
