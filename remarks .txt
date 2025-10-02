@@ -22,10 +22,7 @@ footer section -1 is complete  but need to make it pixel perfect
 
 html{
     
-    <main class="contents">
-        <aside class="filters-wrapper">
-            <div class="filters">
-                <div class="delivery">
+  >
                     <span class="heading">
                         Delivery Day
                     </span>
