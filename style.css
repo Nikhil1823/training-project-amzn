@@ -54,8 +54,7 @@ body * {
 
 .laptop-view {
     display: none !important;
-    /* visibility: hidden; */
-}
+   }
 
 /* for mobile screen  */
 * {
