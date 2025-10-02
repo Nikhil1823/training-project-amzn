@@ -21,20 +21,7 @@ footer section -1 is complete  but need to make it pixel perfect
 
 
 html{
-    
-  >
-                    <span class="heading">
-                        Delivery Day
-                    </span>
-                    <div class="input-div">
-                        <input type="checkbox">
-                        <p>Get it by Tomorrow</p>
-                    </div>
-                    <div class="input-div">
-                        <input type="checkbox">
-                        <p>Get it in 2 Days</p>
-                    </div>
-                </div>
+
                 <div class="categories"></div>
                 <div class="brands">
                     <p class="clear"></p>
