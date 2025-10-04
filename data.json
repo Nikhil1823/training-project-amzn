@@ -3,7 +3,6 @@
     {
       "title": "Apple EarPods with Lightning Connector",
       "images": "https://m.media-amazon.com/images/I/317eB4+yU6L._AC_UL480_FMwebp_QL65_.jpg",
-
       "rating": {
         "starCount": 4,
         "totalPurchase": "4087",
@@ -31,7 +30,6 @@
     {
       "title": "Apple iPhone 15 (128 GB) - Pink",
       "images": "https://m.media-amazon.com/images/I/71v2jVh6nIL._AC_UL480_FMwebp_QL65_.jpg",
-
       "rating": {
         "starCount": 4.5,
         "totalPurchase": "4180",
@@ -67,7 +65,6 @@
         "totalPurchase": "4180",
         "recentPurchase": "4K+ bought in past month"
       },
-
       "price": {
         "offerPrice": 60300,
         "actualPrice": 69900,
