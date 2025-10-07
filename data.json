@@ -102,8 +102,7 @@
         "discount": 7
       },
       "isPrime": true,
-      "offers": {
-        "offer1": "",
+      "offers": { "offer1": "",
         "offer2": ""
       },
       "delivery": "FREE delivery Mon, 30 Jun",
