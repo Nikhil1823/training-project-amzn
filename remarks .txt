@@ -14,9 +14,6 @@ nav-3 is almost complete and there is nothing to worry there i guess -its finish
 
 
 
-
-
-
 footer section -1 is complete  but need to make it pixel perfect
 
 
