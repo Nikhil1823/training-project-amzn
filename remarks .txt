@@ -5,8 +5,6 @@ going to start nav2 but there is some minor adjustment need to do in nav-1
 
 in nav-2 there is some minor padding mistake or so i think thats why that nav-2 elemnt kinda blinks and in that nav2 i dont used extra li elemnt like they do 
 only to just keep things working for now
-
-
 nav-3 is almost complete and there is nothing to worry there i guess -its finished
 
 
