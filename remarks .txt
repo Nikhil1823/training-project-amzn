@@ -1,8 +1,5 @@
 have some flickering in delivery container
-
-
 always keep that default styles in mind
-
 
 going to start nav2 but there is some minor adjustment need to do in nav-1
 
