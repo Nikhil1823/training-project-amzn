@@ -23,6 +23,7 @@ const resultDiv = document.querySelector(
   "aside.result-section div.result-wrapper div.result-container"
 );
 
+
 const resultHeader = `<div class="result-header">
                         <h2>Results</h2>
                         <p>Check each product page for other buying options.</p>
