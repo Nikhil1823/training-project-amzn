@@ -12,10 +12,12 @@ const smStarMap = {
   4.5: `<i class="sm-stars-four5"></i> `,
   3.5: `<i class="sm-stars-three5"></i>`,
 };
+
 // for mobile view
 const mobileContainer = document.querySelector(
   "main#contents.mobile-view div.sm-page-wrapper div.sm-card-layout"
 );
+
 //for 1280px screens
 const resultDiv = document.querySelector(
   "aside.result-section div.result-wrapper div.result-container"
