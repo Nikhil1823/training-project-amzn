@@ -7,6 +7,8 @@ const starPairs = {
   4.5: `<i class="four5-test"></i>`,
 };
 
+
+
 const smStarMap = {
   4: `<i class="sm-stars-four"></i>`,
   4.5: `<i class="sm-stars-four5"></i> `,
