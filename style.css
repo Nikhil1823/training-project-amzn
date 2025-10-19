@@ -1,8 +1,6 @@
 body * {
     text-rendering: optimizeLegibility
 }
-
-
 @font-face {
     font-family: 'Amazon Ember';
     font-weight: 200;
